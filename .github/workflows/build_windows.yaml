@@ -17,40 +17,15 @@ jobs:
           - arch: AMD64
             platform: x64
             boost-lib: 64
-            python-wheel: "cp38"
-            python-version: "3.8"
-          - arch: AMD64
-            platform: x64
-            boost-lib: 64
-            python-wheel: "cp39"
-            python-version: "3.9"
-          - arch: AMD64
-            platform: x64
-            boost-lib: 64
-            python-wheel: "cp310"
-            python-version: "3.10"
-          - arch: AMD64
-            platform: x64
-            boost-lib: 64
-            python-wheel: "cp311"
-            python-version: "3.11"
-          - arch: AMD64
-            platform: x64
-            boost-lib: 64
-            python-wheel: "cp312"
-            python-version: "3.12"
-          - arch: AMD64
-            platform: x64
-            boost-lib: 64
-            python-wheel: "cp313"
-            python-version: "3.13"
+            python-wheel: "cp314"
+            python-version: "3.14"
 
     steps:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
     - name: Set up Python ${{ matrix.python-version }}
-      if: ${{ matrix.python-version }} != "3.13"
+      if: ${{ matrix.python-version }} != "3.14"
       uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
